@@ -6,7 +6,7 @@ A full-stack Lead Management Dashboard built with the MERN stack (MongoDB, Expre
 [Link to deployed app](https://your-deployment-link.com)
 
 ## GitHub Repository
-[https://github.com/Piyushratn/smart-leads-dashboard](https://github.com/YOURUSERNAME/smart-leads-dashboard)
+[https://github.com/Piyushratn/smart-leads-dashboard](https://github.com/Piyushratn/smart-leads-dashboard)
 
 ## Features
 
