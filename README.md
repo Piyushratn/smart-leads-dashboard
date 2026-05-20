@@ -3,7 +3,7 @@
 A full-stack Lead Management Dashboard built with the MERN stack (MongoDB, Express, React, Node.js) with TypeScript, JWT authentication, role-based access control, and Docker support.
 
 ## Live Demo
-[Link to deployed app](https://your-deployment-link.com)
+[Link to deployed app](https://smart-leads-dashboard-navy.vercel.app/)
 
 ## GitHub Repository
 [https://github.com/Piyushratn/smart-leads-dashboard](https://github.com/Piyushratn/smart-leads-dashboard)
