@@ -6,7 +6,7 @@ A full-stack Lead Management Dashboard built with the MERN stack (MongoDB, Expre
 [Link to deployed app](https://your-deployment-link.com)
 
 ## GitHub Repository
-[https://github.com/YOURUSERNAME/smart-leads-dashboard](https://github.com/YOURUSERNAME/smart-leads-dashboard)
+[https://github.com/Piyushratn/smart-leads-dashboard](https://github.com/YOURUSERNAME/smart-leads-dashboard)
 
 ## Features
 
@@ -43,31 +43,61 @@ A full-stack Lead Management Dashboard built with the MERN stack (MongoDB, Expre
 - MongoDB
 
 ## Project Structure
+
+```
 smart-leads-dashboard/
 ├── backend/
 │   ├── src/
-│   │   ├── config/         # Database connection
-│   │   ├── controllers/    # Route controllers
-│   │   ├── middleware/     # Auth & role middleware
-│   │   ├── models/         # Mongoose models
-│   │   ├── routes/         # API routes
-│   │   ├── types/          # TypeScript interfaces
-│   │   └── app.ts          # Express app entry
+│   │   ├── config/
+│   │   │   └── db.ts
+│   │   ├── controllers/
+│   │   │   ├── auth.controller.ts
+│   │   │   └── lead.controller.ts
+│   │   ├── middleware/
+│   │   │   ├── auth.ts
+│   │   │   ├── role.ts
+│   │   │   └── errorHandler.ts
+│   │   ├── models/
+│   │   │   ├── User.ts
+│   │   │   └── Lead.ts
+│   │   ├── routes/
+│   │   │   ├── auth.routes.ts
+│   │   │   └── lead.routes.ts
+│   │   ├── types/
+│   │   │   └── index.ts
+│   │   └── app.ts
 │   ├── .env.example
 │   ├── Dockerfile
+│   ├── tsconfig.json
 │   └── package.json
 ├── frontend/
 │   ├── src/
-│   │   ├── api/            # Axios API calls
-│   │   ├── components/     # Reusable components
-│   │   ├── context/        # Auth context
-│   │   ├── hooks/          # Custom hooks
-│   │   ├── pages/          # Page components
-│   │   └── types/          # TypeScript interfaces
+│   │   ├── api/
+│   │   │   ├── axios.ts
+│   │   │   ├── auth.api.ts
+│   │   │   └── leads.api.ts
+│   │   ├── components/
+│   │   │   ├── Filters.tsx
+│   │   │   ├── LeadForm.tsx
+│   │   │   └── Pagination.tsx
+│   │   ├── context/
+│   │   │   └── AuthContext.tsx
+│   │   ├── hooks/
+│   │   │   ├── useLeads.ts
+│   │   │   └── useDebounce.ts
+│   │   ├── pages/
+│   │   │   ├── Login.tsx
+│   │   │   ├── Register.tsx
+│   │   │   └── Dashboard.tsx
+│   │   ├── types/
+│   │   │   └── index.ts
+│   │   └── App.tsx
 │   ├── Dockerfile
+│   ├── tailwind.config.js
 │   └── package.json
 ├── docker-compose.yml
 └── README.md
+```
 
 ## Setup Instructions
 
