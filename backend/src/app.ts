@@ -8,16 +8,34 @@ import leadRoutes from './routes/lead.routes';
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors({ 
-  origin: process.env.CLIENT_URL || 'http://localhost:3000', 
-  credentials: true 
+// Allow all origins for now
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow requests with no origin (mobile apps, curl, etc.)
+    if (!origin) return callback(null, true);
+    // Allow all vercel URLs and localhost
+    if (
+      origin.includes('vercel.app') ||
+      origin.includes('localhost') ||
+      origin.includes('onrender.com')
+    ) {
+      return callback(null, true);
+    }
+    return callback(null, true); // Allow all for now
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
 }));
+
+app.options('*', cors()); // Handle preflight requests
+
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
 app.use('/api/leads', leadRoutes);
 
-// Error handler must have exactly 4 parameters
+// Error handler
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   console.error('Error caught:', err.message);
   const statusCode = err.statusCode || 500;
