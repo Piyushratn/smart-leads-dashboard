@@ -1,4 +1,5 @@
 import { Response, NextFunction } from 'express';
+// @ts-ignore
 import { Parser } from 'json2csv';
 import Lead from '../models/Lead';
 import { AuthRequest, LeadQuery, PaginationMeta } from '../types';
